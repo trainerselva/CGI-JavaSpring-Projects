@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- Bean for SpellChecker -->
+    <bean id="spellChecker" class="com.cgi.springCoreDemo.service.SpellChecker" />
+    
+    <!-- Bean for TextEditor, injecting SpellChecker -->
+    <bean id="textEditor" class="com.cgi.springCoreDemo.service.TextEditor">
+    	<property name="spellChecker" ref="spellChecker"/>
+    </bean>
+ 
+</beans>
