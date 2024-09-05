@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!-- Define the address bean -->
+    <bean id="address" class="com.cgi.springCoreDemo.autowiring.Address">
+    	<property name="city" value="Bangalore" />
+    	<property name="country" value="India" />
+    </bean>
+    
+    <!-- Define the person bean with autowire by name -->
+    <bean id="person" class="com.cgi.springCoreDemo.autowiring.Person" autowire="no">
+    	<property name="name" value="Priya" />
+    	<property name="age" value="27"></property>
+    	<property name="address" ref="address" />
+    </bean>
+
+</beans>
