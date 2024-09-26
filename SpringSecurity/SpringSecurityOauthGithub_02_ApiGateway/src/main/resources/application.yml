@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liQoo5q1iIahOR6x
+            client-secret: c642c4c9faf2b7e0e132a9c73bd2e9b6bd1d7df6
+            scope: read:user
+            redirect-uri: http://localhost:8080/login/oauth2/code/github
+            authorization-grant-type: authorization_code
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+
+  cloud:
+    gateway:
+      routes:
+        - id: resource-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/resource/**
+          filters:
+            - TokenRelay

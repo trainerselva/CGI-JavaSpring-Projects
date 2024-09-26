@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        opaquetoken:
+          introspection-uri: https://github.com/login/oauth/introspect
+          client-id: Ov23liQoo5q1iIahOR6x
+          client-secret: c642c4c9faf2b7e0e132a9c73bd2e9b6bd1d7df6

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Home</title>
+	</head>
+	<body>
+		<h2>Home Page</h2>
+		<p>Welcome, <span th:text="${#httpServletRequest.remoteUser}">User</span>!</p>
+		<p><a href="/admin/dashboard">Go to Admin Dashboard</a></p>
+		<p><a href="/logout">Logout</a></p>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>GitHub OAuth Login</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <div th:if="${name}">
+        <p>Hello, <span th:text="${name}">User</span></p>
+        <img th:src="${avatar_url}" alt="Avatar">
+    </div>
+    <div th:if="${#authentication.name == 'anonymousUser'}">
+        <a href="/oauth2/authorization/github">Login with GitHub</a>
+    </div>
+</body>
+</html>
